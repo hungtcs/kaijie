@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>布局</title>
+  <style>
+    .display {
+      height: 100px;
+      border: 1px solid red;
+      box-sizing: border-box;
+    }
+    .display--block {
+      display: block;
+    }
+    .display--inline {
+      vertical-align: bottom;
+      display: inline;
+      border-color: green;
+    }
+    .display--inline-block {
+      vertical-align: bottom;
+      width: 100px;
+      display: inline-block;
+      border-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <section style="display: none;">
+    <div class="display display--block"></div>
+    <div class="display display--inline-block">ABC</div>
+    <div class="display display--inline-block">ABC</div>
+    <div class="display display--inline-block">ABC</div>
+    <div class="display display--inline-block">ABC</div>
+    <div class="display display--inline-block">ABC</div>
+    <div class="display display--inline-block">ABC</div>
+  </section>
+  <section>
+    <style>
+      .flex {
+        height: 300px;
+        display: flex;
+        flex-flow: row;
+        flex-wrap: nowrap;
+        border: 1px solid red;
+        box-sizing: border-box;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+      .flex .flex__item {
+        width: 100px;
+        height: 100%;
+        border: 1px solid green;
+        box-sizing: border-box;
+        flex-shrink: 0;
+      }
+    </style>
+    <div class="flex flex--test">
+      <div class="flex__item">ABC</div>
+      <div class="flex__item" style="flex-grow: 1;">DEF</div>
+    </div>
+  </section>
+</body>
+</html>

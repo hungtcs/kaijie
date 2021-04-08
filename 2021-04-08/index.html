@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS 初步进阶</title>
+  <style>
+    h1 {
+      color: red;
+    }
+    h1:hover {
+      color: green;
+      font-size: 42px;
+      font-weight: 300;
+    }
+    h1 span:hover {
+      color: yellow;
+    }
+    div:focus-within {
+      border: 3px solid red;
+    }
+    div:focus {
+      border: 3px solid green;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>
+    这是一级标题
+    <span>SSSSSSSSSSSSS</span>
+  </h1>
+
+
+  <div tabindex="0">
+    <input type="text" />
+  </div>
+</body>
+</html>
