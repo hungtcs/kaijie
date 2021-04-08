@@ -17,9 +17,9 @@ outline: 描边        所有可以获得焦点的元素默认有outline
 
 -------------------
 
-这两个属性是针对  inline / inline-block
-text-align       水平居中
-vertival-align   垂直居中
+这两个属性是针对  `inline` / `inline-block`
+- text-align       水平居中
+- vertival-align   垂直居中
 
 -------------------
 
