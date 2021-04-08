@@ -33,4 +33,10 @@ outline: 描边        所有可以获得焦点的元素默认有outline
   - block         块级元素
   - inline        行内元素
   - inline-block  块级行内
-- flex            弹性布局    块级
+  - flex          弹性布局    块级
+    - align-items
+    - justify-content
+    - flex-wrap
+    - flex-flow
+    - flex-shrink
+    - flex-grow
