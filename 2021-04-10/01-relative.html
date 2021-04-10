@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relative 定位</title>
+  <style>
+    body {
+      margin: 0px;
+    }
+    .test--1 {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+
+      position: relative;  /* 相对 */
+      top: 30px;
+      right: -30px;
+    }
+    .test--2 {
+      background-color: green;
+
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+    }
+    .test2-wrapper {
+      width: 100px;
+      height: 100px;
+      margin: 0px auto;
+      background-color: gray;
+      position: relative;
+    }
+    .test--3{
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+
+      position: absolute;
+      top: 100px;
+      left: 100px;
+    }
+    .test--4 {
+      width: 30px;
+      height: 30px;
+      background-color: purple;
+
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+    .test--5 {
+      width: 100px;
+      height: 100px;
+      background-color: royalblue;
+
+      position: fixed;
+      top: 20px;
+      left: 20px;
+    }
+    .test5-wrapper {
+      width: 150px;
+      height: 150px;
+      background-color: gray;
+
+      position: relative;
+      left: 50px;
+    }
+  </style>
+</head>
+<body>
+  <!-- <div class="test--1">元素本身的相对位置</div>
+  <div class="test2-wrapper">
+    <div class="test--2">absolute</div>
+  </div> -->
+  <!-- <div class="test--3">
+    <div class="test--4"></div>
+  </div> -->
+  <div class="test5-wrapper">
+    <div class="test--5"></div>
+  </div>
+</body>
+</html>
