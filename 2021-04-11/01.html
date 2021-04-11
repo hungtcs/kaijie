@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form - 01</title>
+  <style>
+    input:valid {
+      border-color: green;
+    }
+    input:invalid {
+      border-color: red;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <div>
+      <label for="username">*Username:</label>
+      <input id="username" type="text"
+        name="username" required
+        minlength="6"
+        maxlength="10"
+      />
+    </div>
+    <div>
+      <label>
+        <span>*Password:</span>
+        <input type="password" name="password" required />
+      </label>
+    </div>
+    <div>
+      <span>Gender:</span>
+      <label>
+        <input type="radio" name="gender" value="未知" />
+        <span>未知</span>
+      </label>
+      <label>
+        <input type="radio" name="gender" value="男性" />
+        <span>男性</span>
+      </label>
+      <label>
+        <input type="radio" name="gender" value="女性" />
+        <span>女性</span>
+      </label>
+    </div>
+    <div>
+      <label>
+        <span>年龄:</span>
+        <input type="number" name="age" min="0" max="120" step="1" />
+      </label>
+    </div>
+    <div>
+      <span>Tag:</span>
+      <label>
+        <input type="checkbox" name="tags" value="篮球" />
+        <span>篮球</span>
+      </label>
+      <label>
+        <input type="checkbox" name="tags" value="乒乓球" />
+        <span>乒乓球</span>
+      </label>
+      <label>
+        <input type="checkbox" name="tags" value="足球" />
+        <span>足球</span>
+      </label>
+    </div>
+    <div>
+      <label>
+        <span>Month:</span>
+        <select name="month">
+          <option value="">-</option>
+          <option value="1">一月</option>
+          <option value="2">二月</option>
+          <option value="3">三月</option>
+        </select>
+        <!-- <select name="month">
+          <option value="">-</option>
+          <optgroup label="月份">
+            <option value="1">一月</option>
+            <option value="2">二月</option>
+            <option value="3">三月</option>
+          </optgroup>
+        </select> -->
+        <!-- <select name="month" multiple="multiple">
+          <option value="">-</option>
+          <option value="1">一月</option>
+          <option value="2">二月</option>
+          <option value="3">三月</option>
+        </select> -->
+      </label>
+    </div>
+    <hr />
+    <div>
+      <label>
+        <span>颜色:</span>
+        <input type="color" name="color" value="#FF0000" />
+      </label>
+    </div>
+    <div>
+      <label>
+        <span>范围:</span>
+        <input type="range" name="range" min="100" max="1000" step="100" />
+      </label>
+    </div>
+    <div>
+      <label>
+        <span>电子邮件:</span>
+        <input type="email" name="email" />
+      </label>
+    </div>
+    <div>
+      <label>
+        <span>日期:</span>
+        <input type="date" name="date" />
+      </label>
+    </div>
+    <div>
+      <label>
+        <span>时间:</span>
+        <input type="time" name="time" />
+      </label>
+    </div>
+    <div>
+      <button type="reset">Reset</button>
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+</body>
+</html>

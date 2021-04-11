@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form File</title>
+</head>
+<body>
+  <!-- encode type -->
+  <form method="post" enctype="multipart/form-data">
+    <label>
+      <span>头像：</span>
+      <input type="file" multiple name="avatar" accept="image/png,image/jpeg" required />
+    </label>
+    <div>
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+</body>
+</html>
