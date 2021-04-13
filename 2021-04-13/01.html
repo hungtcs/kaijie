@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drawer</title>
+  <style>
+    html {
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+    }
+    body {
+      width: 100%;
+      margin: 0px;
+      min-height: 100%;
+    }
+    .drawer-container {
+      width: 100%;
+      position: relative;
+    }
+    .drawer-container > .drawer {
+      top: 0px;
+      left: -300px;
+      width: 300px;
+      position: absolute;
+      background-color: lightpink;
+
+      transition: left 2s;
+    }
+    .drawer-container > .drawer-content {
+      margin-left: 0px;
+
+      transition: margin-left 2s;
+    }
+    .drawer-container.drawer-container--open > .drawer {
+      left: 0px;
+    }
+    .drawer-container.drawer-container--open > .drawer-content {
+      margin-left: 300px;
+    }
+  </style>
+</head>
+<body>
+  <header style="height: 52px; background-color: lightblue;">
+    <button class="toggle-button-1">切换1</button>
+    <button class="toggle-button-2">切换2</button>
+  </header>
+
+  <div class="drawer-container drawer-container-1">
+    <div class="drawer">
+      侧边内容
+    </div>
+    <div class="drawer-content">
+      内容区域
+    </div>
+  </div>
+
+  <div class="drawer-container drawer-container-2">
+    <div class="drawer">
+      侧边内容
+    </div>
+    <div class="drawer-content">
+      内容区域
+    </div>
+  </div>
+  <script>
+    const Drawer = (function() {
+      function Drawer(container) {
+        this.container = container;
+      }
+
+      Drawer.prototype.isOpen = function() {
+        return this.container.classList.contains('drawer-container--open');
+      }
+
+      Drawer.prototype.close = function() {
+        this.container.classList.remove('drawer-container--open');
+      }
+
+      Drawer.prototype.toggle = function() {
+        this.container.classList.toggle('drawer-container--open');
+      }
+
+      return Drawer;
+    }());
+
+    console.log({ Drawer: Drawer });
+
+    const drawer1 = new Drawer(document.querySelector('.drawer-container-1'));
+    const drawer2 = new Drawer(document.querySelector('.drawer-container-2'));
+
+    document.querySelector('.toggle-button-1')
+      .addEventListener('click', function() {
+        drawer1.toggle();
+      });
+
+    document.querySelector('.toggle-button-2')
+      .addEventListener(
+        'click',
+        function() {
+          drawer2.toggle();
+          console.log(drawer2.isOpen());
+        },
+      );
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    class Drawer {
+
+      constructor(container) {
+        this.container = container;
+      }
+
+      toggle() {
+        this.container.classList.toggle('drawer-container--open');
+      }
+
+      isOpen() {
+        return this.container.classList.contains('drawer-container--open');
+      }
+
+      close() {
+        this.container.classList.remove('drawer-container--open');
+      }
+
+    }
+
+    console.log({ Drawer: Drawer });
+
+  </script>
+</body>
+</html>
