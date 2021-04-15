@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toggle Button</title>
+  <link rel="stylesheet" href="./toggle-button.css" />
+</head>
+<body>
+  <script src="./toggle-button.js"></script>
+  <div id="toggle-button"></div>
+  <script>
+    const element = document.querySelector('#toggle-button');
+    const toggleButton = new ToggleButton(element);
+
+    toggleButton.addEventListener(
+      'change',
+      function(on) {
+        console.log(on);
+      },
+    );
+    toggleButton.addEventListener(
+      'on',
+      function() {
+        console.log('按钮被打开');
+      },
+    );
+  </script>
+</body>
+</html>
