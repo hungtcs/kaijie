@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ripple</title>
+  <link rel="stylesheet" href="./ripple.css" />
+  <script src="./ripple.js"></script>
+  <style>
+    body {
+      overflow: hidden;
+    }
+    .test-1 {
+      width: 100px;
+      height: 100px;
+      margin: 100px;
+      background-color: skyblue;
+    }
+  </style>
+</head>
+<body>
+  <div style="padding: 100px;">
+    <div class="test-1"></div>
+  </div>
+
+  <script>
+    const element = document.querySelector('.test-1');
+
+    const ripple = new Ripple(
+      {
+        element,
+        color: 'rgba(255, 0, 0, 0.2)',
+      },
+    );
+
+    console.log(ripple);
+
+  </script>
+</body>
+</html>
