@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tooltip</title>
+  <link rel="stylesheet" href="./tooltip.css" />
+  <style>
+    body {
+      margin: 0px;
+      height: 100vh;
+      padding: 20px;
+      display: flex;
+      flex-flow: column;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <div style="flex-grow: 1;"></div>
+  <div style="display: flex;">
+    <div style="flex-grow: 1;"></div>
+    <button tooltip="这是一个提示这是一个提示这是一个提示这是一个提示这是一个提示这是一个提示这是一个提示这是一个提示这是一个提示这是一个提示这是一个提示这是一个提示这是一个提示这是一个提示这是一个提示这是一个提示这是一个提示这是一个提示这是一个提示这是一个提示这是一个提示这是一个提示这是一个提示这是一个提示这是一个提示这是一个提示这是一个提示这是一个提示这是一个提示这是一个提示这是一个提示这是一个提示">
+      <span>ACTION</span>
+    </button>
+    <button tooltip="这是一个提示">
+      <span>ACTION</span>
+    </button>
+    <button tooltip="这是一个提示">
+      <span>ACTION</span>
+    </button>
+  </div>
+  <script src="./tooltip.js"></script>
+  <script>
+    Tooltip.init();
+  </script>
+</body>
+</html>
