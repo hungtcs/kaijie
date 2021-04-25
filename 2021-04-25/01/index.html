@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array Splice</title>
+</head>
+<body>
+  <ul id="list"></ul>
+  <input id="input" />
+  <button onclick="deleteItem();">Delete</button>
+  <script>
+    const list = ['Javascript', 'Java', 'Rust', 'Go', 'Python'];
+
+    function render() {
+      const listElement = document.querySelector('#list');
+      listElement.innerHTML = '';
+      list.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.textContent = `${ index }: ${ item }`;
+        listElement.appendChild(li);
+      });
+    }
+
+    render();
+
+    function deleteItem() {
+      const input = document.querySelector('#input');
+      const item = input.value;
+      const index = list.indexOf(item);
+      if(index < 0) {
+        return;
+      }
+      list.splice(index, 1);
+      render();
+      input.value = '';
+    }
+  </script>
+</body>
+</html>
