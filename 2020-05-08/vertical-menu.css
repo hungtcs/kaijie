@@ -1,0 +1,53 @@
+
+.vertical-menu {
+  overflow: hidden;
+  font-size: 14px;
+}
+
+.vertical-menu ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+.vertical-menu ul > li {
+  overflow: hidden;
+}
+
+.vertical-menu ul > li[active] {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.vertical-menu ul > li[child-active] {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.vertical-menu ul > li[has-children] > ul[submenu] {
+  height: 0px;
+  /* display: none; */
+  transition: height 128ms;
+}
+
+.vertical-menu ul > li[has-children][open] > ul[submenu] {
+  /* height: auto; */
+  /* display: block; */
+}
+
+.vertical-menu ul > li > a {
+  height: 32px;
+  cursor: pointer;
+  display: flex;
+  padding: 0px 16px;
+  align-items: center;
+}
+
+.vertical-menu > ul[root] > li:hover > a {
+  background-color: rgba(0, 0, 0, 0.128);
+}
+
+.vertical-menu ul[submenu] > li:hover > a {
+  background-color: rgba(0, 0, 0, 0.128);
+}
+
+.vertical-menu ul[submenu] > li > a {
+  padding-left: 32px;
+}

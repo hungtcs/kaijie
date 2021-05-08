@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vertical Menu</title>
+  <link rel="stylesheet" href="./vertical-menu.css" />
+  <style>
+    body {
+      margin: 0px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="vertical-menu"></div>
+
+  <script type="module">
+    import { VerticalMenu } from './vertical-menu.js';
+
+    const menu = new VerticalMenu({
+      menus: [
+        {
+          id: 'overview',
+          title: '概览',
+        },
+        {
+          id: 'menu-1',
+          title: '菜单一',
+          children: [
+            {
+              id: 'submenu-1',
+              title: '子菜单一',
+            },
+            {
+              id: 'submenu-2',
+              title: '子菜单二',
+            }
+          ]
+        },
+        {
+          id: 'menu-1',
+          title: '菜单一',
+          children: [
+            {
+              id: 'submenu-1',
+              title: '子菜单一',
+            },
+            {
+              id: 'submenu-2',
+              title: '子菜单二',
+            }
+          ]
+        },
+      ],
+      element: document.querySelector('#vertical-menu'),
+    });
+
+    menu.addEventListener(
+      'menuclick',
+      (event) => {
+        const { menu } = event.detail;
+        console.log(menu);
+      },
+    );
+
+    console.log(menu);
+
+    window._menu = menu;
+
+  </script>
+</body>
+</html>
