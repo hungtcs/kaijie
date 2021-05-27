@@ -1,0 +1,77 @@
+
+.flip-number {
+  width: 100px;
+  height: 128px;
+}
+
+.flip-number {
+  display: inline-block;
+  position: relative;
+  /* box-shadow: 0px 0px 12px #000000; */
+  border-radius: 8px;
+  transform-style: preserve-3d;
+  perspective: 250px;
+}
+
+.page {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  position: absolute;
+  overflow: hidden;
+  border-radius: 8px;
+  justify-content: center;
+  background-color: #272C35;
+}
+
+.page.top {
+  align-items: flex-end;
+  transform-origin: bottom;
+}
+.page.bottom {
+  top: 50%;
+  align-items: flex-start;
+  transform-origin: top;
+}
+
+.page.top::after {
+  bottom: 0px;
+  width: 100%;
+  height: 2px;
+  background-color: #20252C;
+  content: '';
+  position: absolute;
+}
+.page.bottom::after {
+  top: 0px;
+  width: 100%;
+  height: 2px;
+  background-color: #20252C;
+  content: '';
+  position: absolute;
+}
+
+.page > span {
+  color: #FFFFFF;
+  font-size: 92px;
+}
+
+.page.top > span {
+  transform: translateY(50%);
+}
+.page.bottom > span {
+  transform: translateY(-50%);
+}
+
+.page.next.bottom {
+  transform: rotateX(90deg);
+}
+
+.flip-number.active > .page.current.top {
+  transition: transform 256ms linear;
+  transform: rotateX(-90deg);
+}
+.flip-number.active > .page.next.bottom {
+  transition: transform 256ms 256ms linear;
+  transform: rotateX(0deg);
+}

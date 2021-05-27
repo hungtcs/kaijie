@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flip Clock</title>
+  <link rel="stylesheet" href="./flip-clock.css" />
+</head>
+<body>
+  <div>
+    <div class="hours-1"></div>
+    <div class="hours-2"></div>
+    :
+    <div class="minutes-1"></div>
+    <div class="minutes-2"></div>
+    :
+    <div class="seconds-1"></div>
+    <div class="seconds-2"></div>
+  </div>
+
+  <script type="module">
+    import { FlipNumber } from './flip-clock.js';
+
+    const hours1 = new FlipNumber(document.querySelector('.hours-1'), '0');
+    const hours2 = new FlipNumber(document.querySelector('.hours-2'), '0');
+    const minutes1 = new FlipNumber(document.querySelector('.minutes-1'), '0');
+    const minutes2 = new FlipNumber(document.querySelector('.minutes-2'), '0');
+    const seconds1 = new FlipNumber(document.querySelector('.seconds-1'), '0');
+    const seconds2 = new FlipNumber(document.querySelector('.seconds-2'), '0');
+
+    window.setInterval(
+      () => {
+        const date = new Date();
+        const hours = date.getHours();
+        const minutes = date.getMinutes();
+        const seconds = date.getSeconds();
+
+        hours1.next(Number.parseInt(hours / 10));
+        hours2.next(hours % 10);
+        minutes1.next(Number.parseInt(minutes / 10));
+        minutes2.next(minutes % 10);
+        seconds1.next(Number.parseInt(seconds / 10));
+        seconds2.next(seconds % 10);
+
+      },
+      1000,
+    );
+
+  </script>
+</body>
+</html>
